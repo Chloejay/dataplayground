@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+'use strict';
+
+const program = require('commander');
+program
+  .option('-s, --start-date', 'start date')
+  .option('-e, --end-date', 'end date')
+  .option('-p, --page', 'page')
+  .parse(process.argv);
+
+const SalesList = require('./apis/SalesList');
+const args = require('yargs').argv;
+
+const options = {
+  startDate: args.s || args.startDate,
+  endDate: args.e || args.endDate,
+  page: args.p || args.page
+}
+
+const saleslist = new SalesList(options);
+
+(async() => {
+  await saleslist.fetchData()
+  //await saleslist.saveDb()
+})(); 

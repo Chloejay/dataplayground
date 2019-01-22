@@ -1,0 +1,97 @@
+{
+  "name": "SaleItems",
+  "plural": "sale-items",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "item_id": {
+      "type": "number",
+      "id": true,
+      "generated": false,
+      "required": true
+    },
+    "bn": {
+      "type": "string",
+      "required": true,
+      "comments": "product code"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "spec_name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number",
+      "mysql": {
+        "dataType": "FLOAT",
+        "precision": 20,
+        "scale": 4
+      }
+    },
+    "nums": {
+      "type": "number",
+      "comments": "sales volume",
+      "mysql": {
+        "dataType": "INTEGER"
+      }
+    },
+    "pmt_price": {
+      "type": "number",
+      "mysql": {
+        "dataType": "FLOAT",
+        "precision": 20,
+        "scale": 4
+      }
+    },
+    "sale_price": {
+      "type": "number",
+      "required": true,
+      "mysql": {
+        "dataType": "FLOAT",
+        "precision": 20,
+        "scale": 4
+      }
+    },
+    "apportion_pmt": {
+      "type": "number",
+      "mysql": {
+        "dataType": "FLOAT",
+        "precision": 20,
+        "scale": 4
+      }
+    },
+    "sales_amount": {
+      "type": "number",
+      "mysql": {
+        "dataType": "FLOAT",
+        "precision": 20,
+        "scale": 4
+      }
+    },
+    "item_type": {
+      "type": "string"
+    },
+    "barcode": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "sales": {
+      "type": "belongsTo",
+      "model": "Sales",
+      "foreignKey": "salesId",
+      "options": {
+        "validate": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+} 
