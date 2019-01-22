@@ -17,8 +17,7 @@ This workshop will talks about the data science pipeline, play fun with the some
 <h6>Setup </h6>
 To start this workshop, install it locally using npm and pip: (before plan to use docker but my mac low storage will strike in high frequency)</br> 
 
-```
-html 
+```html 
 $ npm install
 $ npm install -g loopback-cli 
 $ [npm install loopback-connector-mysql --save]  (https://www.npmjs.com/package/loopback-connector-mysql) 
