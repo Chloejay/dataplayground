@@ -1,7 +1,9 @@
 <h4><strong>Data science playground- 20190126 Coderbunker workshop</strong></h4> 
 <h6> General info</h6> :information_desk_person: 
 This workshop will talks about the data science pipeline, play fun with the some open source tools from data fetching, ETL to data analytics (data processing), data visualization(data insight generation), in the end I will show how to use simple machine leanring library to run one modeling (predictive analysis).  
-	
+
+![picture alt](https://pbs.twimg.com/media/DYaocvHU8AAIYYW.jpg "Spark with Zeppelin are great combination")  
+
 <h6> Technologies tools request: </h6>
 <ul>
 	<li>loopback:v5.0.0 generator-loopback:v6.0.2 loopback-workspace:v4.5.0 </li>
@@ -25,10 +27,9 @@ $ pip install Keras
 
 ``` 
 <h6>Further reading material </h6> 
+<blockquote>
 > SQL 
 > Nodejs 
 > Spark
-> Machine leanring 
-
-
-
+> Machine leanring
+</blockquote> 
