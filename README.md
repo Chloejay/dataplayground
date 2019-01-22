@@ -15,12 +15,15 @@ This workshop will talks about the data science pipeline, play fun with the some
 </ul>
 
 <h6>Setup </h6>
-To start this workshop, install it locally using npm: (before plan to use docker but my mac low storage will strike in high frequency) 
+To start this workshop, install it locally using npm and pip: (before plan to use docker but my mac low storage will strike in high frequency)</br> 
+
 ```
+html 
 $ npm install
 $ npm install -g loopback-cli 
-$ npm install loopback-connector-mysql --save [<span href='https://www.npmjs.com/package/loopback-connector-mysql'>link</span>]
-$ pip install Keras 
+$ [npm install loopback-connector-mysql --save]  (https://www.npmjs.com/package/loopback-connector-mysql) 
+$ pip install Keras  
+
 ``` 
 <h6>Further reading material </h6> 
 
