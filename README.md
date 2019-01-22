@@ -2,7 +2,8 @@
 <h6> General info</h6> :information_desk_person: 
 This workshop will talks about the data science pipeline, play fun with the some open source tools from data fetching, ETL to data analytics (data processing), data visualization(data insight generation), in the end I will show how to use simple machine leanring library to run one modeling (predictive analysis).  
 
-![picture alt](https://pbs.twimg.com/media/DYaocvHU8AAIYYW.jpg "Spark with Zeppelin are great combination")  
+![picture alt](https://pbs.twimg.com/media/DYaocvHU8AAIYYW.jpg)  
+"Spark with Zeppelin are great combination" 
 
 <h6> Technologies tools request: </h6>
 <ul>
@@ -27,9 +28,8 @@ $ pip install Keras
 
 ``` 
 <h6>Further reading material </h6> 
-<blockquote>
-> SQL 
-> Nodejs 
-> Spark
-> Machine leanring
-</blockquote> 
+<blockquote>SQL </blockquote> 
+<blockquote>Nodejs  </blockquote> 
+<blockquote>Spark </blockquote> 
+<blockquote>Machine leanring </blockquote>  
+
