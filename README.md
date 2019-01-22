@@ -12,8 +12,8 @@ This workshop will talks about the data science pipeline, play fun with the some
 	<li>Python: v3.6.5</li>
 	<li>MySQL (of course feel free to use PostgreSQL, we know we love it!) :smiley:</li>
 	<Li>PySpark</li>
-	<Li><span href= 'https://zeppelin.apache.org/docs/0.6.0/install/install.html'>Zeppelin</span></li>
-	<li><span href='https://pypi.org/project/Keras/'>Keras</span>  </li>
+	<Li><a href= 'https://zeppelin.apache.org/docs/0.6.0/install/install.html'>Zeppelin</a></li>
+	<li><a href='https://pypi.org/project/Keras/'>Keras</a>  </li>
 	
 </ul>
 
@@ -27,6 +27,7 @@ $ [npm install loopback-connector-mysql --save]  (https://www.npmjs.com/package/
 $ pip install Keras  
 
 ``` 
+<img src='desktop/loopback.png'> 
 <h6>Further reading material </h6> 
 <blockquote>SQL </blockquote> 
 <blockquote>Nodejs  </blockquote> 
