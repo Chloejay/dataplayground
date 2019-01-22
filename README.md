@@ -19,6 +19,7 @@ This workshop will talks about the data science pipeline, play fun with the some
 
 <h6>Setup </h6>
 To start this workshop, install it locally using npm and pip: (before plan to use docker but my mac low storage will strike in high frequency)</br> 
+The article I wrote before on Medium about how to set up Loopback, please find <a href= https://medium.com/@chloejiy/use-nodejs-loopback-for-the-fullstack-engineering-a0e470c8f801'>here</a>, might helpful if you just start loopback.   
 
 ```html 
 $ npm install
@@ -27,10 +28,23 @@ $ [npm install loopback-connector-mysql --save]  (https://www.npmjs.com/package/
 $ pip install Keras  
 
 ``` 
-<img src='desktop/loopback.png'> 
-<h6>Further reading material </h6> 
-<blockquote>SQL </blockquote> 
+<h6>Further reading material :green_book:</h6>  
+<blockquote> SQL </blockquote>  
+<ul>
+	<li><a href='https://kva.es/Rampant-Tech-Press/Advanced.SQL.Database.Programmers.Handbook.pdf'>Advanced SQL for database programmer</a></li> 
+</ul>
 <blockquote>Nodejs  </blockquote> 
+<ul>
+	<li><a href='https://github.com/sindresorhus/awesome-nodejs'>Awesome Nodejs</a></li>  
+	<li><a href= 'https://github.com/LeCoupa/awesome-cheatsheets/blob/master/backend/node.js'>Nodejs Cheatsheet</a></li> 
+</ul>
 <blockquote>Spark </blockquote> 
-<blockquote>Machine leanring </blockquote>  
+<ul>
+	<li><a href='http://stanford.edu/~rezab/slides/sparksummit2015/lec2.pdf'>Spark Summit from DataBricks</a></li> 
+</ul>
+<blockquote>Machine leanring </blockquote> 
+<ul>
+	<li><a href= 'https://web.stanford.edu/class/cs20si/lectures/march9guestlecture.pdf'>Keras introduction by Francois Chollet</a></li>
+	<li><a href='http://www.zhanjunlang.com/resources/tutorial/Deep%20Learning%20with%20Keras.pdf'>Deep learning with Keras</a></li> 
+</ul>  
 
