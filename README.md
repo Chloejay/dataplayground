@@ -2,10 +2,12 @@
 <h6> General info</h6> :information_desk_person: 
 This workshop will talks about the data science pipeline, play fun with the some open source tools from data fetching, ETL to data analytics (data processing), data visualization(data insight generation), in the end I will show how to use simple machine leanring library to run one modeling (predictive analysis).  
 
+But before start why need this tool, might say because get rid of tool that don't spark joy. 
+
 ![picture alt](https://pbs.twimg.com/media/DYaocvHU8AAIYYW.jpg)  
 "Spark with Zeppelin are great combination" 
 
-<h6> Technologies tools request: </h6>
+<h6> Getting started: </h6> 
 <ul>
 	<li>loopback:v5.0.0 generator-loopback:v6.0.2 loopback-workspace:v4.5.0 </li>
 	<li>node: v11.3.0 </li>
@@ -23,11 +25,59 @@ The article I wrote before on Medium about how to set up Loopback, please find <
 
 ```html 
 $ npm install
-$ npm install -g loopback-cli 
-$ [npm install loopback-connector-mysql --save]  (https://www.npmjs.com/package/loopback-connector-mysql) 
+$ npm install -g loopback-cli (https://loopback.io/doc/en/lb3/) 
+$ npm install loopback-connector-mysql --save  (https://www.npmjs.com/package/loopback-connector-mysql) 
+$ install Anaconda (https://repo.continuum.io/archive)
+$ install Apache Spark 
+$ install Java 
 $ pip install Keras  
 
 ``` 
+<h6>Install Spark on Mac</h6>
+<ul>
+	<li>First download <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html'>Java</a> </li>
+	note: please don't install Java version more than 8, which will created much bugs later such as java.lang.IllegalArgumentException, Unsupported class file major version 55, so better install from <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html'>Java SE Development Kit 8 </a>site and choose your os system and config.  
+	<li>Go to the <a href= 'http://spark.apache.org/downloads.html'>Apache Spark </a> website  </li>
+	<li>Choose a Spark release and directly download </li>
+	<li>Go to your home directory (command in bold below) <br /> 
+        <code>
+        $ cd ~
+	</code> 
+	  </li> 
+	<li>Unzip the folder in your home directory using the following command </li> <br /> 
+<code> 
+$ tar -zxvf spark-2.4.0-bin-hadoop2.7.tgz
+</code> 
+	<li>Use the following command to see that you have a .bash_profile</li> <br /> 
+<code>
+$ ls -a
+</code> 
+	<li>edit .bash_profile so we can open a spark notebook in any directory. </li> <br /> 
+<code > 
+$ vim .bash_profile 
+	
+export SPARK_PATH=~/spark-2.4.0-bin-hadoop2.7
+export PYSPARK_DRIVER_PYTHON="jupyter" 
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook" 
+#For python 3, have to add the line below or will get an error export PYSPARK_PYTHON=python3 
+alias jupyter_notebook='$SPARK_PATH/bin/pyspark --master local[2]'
+</code> 
+	<li>then run the code to check if the pyspark installed </li> 
+<code>  
+$ jupyter_notebook 
+</code>
+<li>open jupyter notebook from command line </li>
+<code>
+$ cd spark-2.4.0-bin-hadoop2.7 
+$ bin/pyspark 
+</code>
+</ul>  
+
+Spark time!
+basic operations: transformation and actions
+- Transformations are operations on RDDs that return a new RDD, map() and filter(). 
+- Actions are operations that return a result to the driver program or write it to storage, and kick off a computation, count() and first() for a new data types. 
+
 <h6>Further reading material :green_book:</h6>  
 <blockquote> SQL </blockquote>  
 <ul>
@@ -47,4 +97,3 @@ $ pip install Keras
 	<li><a href= 'https://web.stanford.edu/class/cs20si/lectures/march9guestlecture.pdf'>Keras introduction by Francois Chollet</a></li>
 	<li><a href='http://www.zhanjunlang.com/resources/tutorial/Deep%20Learning%20with%20Keras.pdf'>Deep learning with Keras</a></li> 
 </ul>  
-
