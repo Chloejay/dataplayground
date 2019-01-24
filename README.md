@@ -3,6 +3,8 @@
 This workshop will talks about the data science pipeline, play fun with the some open source tools from data fetching, ETL to data analytics (data processing), data visualization(data insight generation), in the end I will show how to use simple machine leanring library to run one modeling (predictive analysis).  
 
 But before start why need this tool, might say because get rid of tool that don't spark joy. 
+performace well and easy to use
+so will focus to talk about SparkSQL, RDDs 
 
 ![picture alt](https://pbs.twimg.com/media/DYaocvHU8AAIYYW.jpg)  
 "Spark with Zeppelin are great combination" 
@@ -52,7 +54,7 @@ $ tar -zxvf spark-2.4.0-bin-hadoop2.7.tgz
 <code>
 $ ls -a
 </code> 
-	<li>edit .bash_profile so we can open a spark notebook in any directory. </li> <br /> 
+	<li>Config Spark to edit .bash_profile </li> <br /> 
 <code > 
 $ vim .bash_profile 
 	
@@ -61,6 +63,8 @@ export PYSPARK_DRIVER_PYTHON="jupyter"
 export PYSPARK_DRIVER_PYTHON_OPTS="notebook" 
 #For python 3, have to add the line below or will get an error export PYSPARK_PYTHON=python3 
 alias jupyter_notebook='$SPARK_PATH/bin/pyspark --master local[2]'
+
+$ source .bash_profile 
 </code> 
 	<li>then run the code to check if the pyspark installed </li> 
 <code>  
@@ -74,9 +78,15 @@ $ bin/pyspark
 </ul>  
 
 Spark time!
+what is Spark
+data processing engine, focus on in-memory distributed computing use case 
 basic operations: transformation and actions
 - Transformations are operations on RDDs that return a new RDD, map() and filter(). 
 - Actions are operations that return a result to the driver program or write it to storage, and kick off a computation, count() and first() for a new data types. 
+
+Zeppelin 
+Basic operators: maps, joins, filters, etc.
+Spark as a tool for data exploration: notebooks and workflow 
 
 <h6>Further reading material :green_book:</h6>  
 <blockquote> SQL </blockquote>  
