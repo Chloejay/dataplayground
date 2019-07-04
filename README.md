@@ -83,7 +83,10 @@ $ ./start-dfs.sh
 #install Maven 
 # build the Hadoop env 
 $ mvn package -Pdist,native -DskipTests -Dtar 
-	
+#from some bugs and configuration 
+![picture alt](https://github.com/Chloejay/dataplayground/blob/master/Screen%20Shot%202019-07-03%20at%2020.59.51.png?raw=true) 
+#to  
+![picture alt](https://github.com/Chloejay/dataplayground/blob/master/Screen%20Shot%202019-07-03%20at%2021.41.46.png?raw=true) 
 ``` 
 <h6>Install Spark on Mac</h6>
 <ul> 
@@ -133,8 +136,7 @@ $ bin/pyspark
 </code>
 </ul>  
 
-Spark time!
-what is Spark
+what is Spark 
 data processing engine, focus on in-memory distributed computing use case 
 basic operations: transformation and actions
 - Transformations are operations on RDDs that return a new RDD, map() and filter(). 
