@@ -2,10 +2,6 @@
 <h6> General info</h6> :information_desk_person: 
 This workshop will talks about the data science pipeline, play fun with the some open source tools from data fetching, ETL to data analytics (data processing), data visualization(data insight generation), in the end I will show how to use simple machine leanring library to run one modeling (predictive analysis).  
 
-But before start why need this tool, might say because get rid of tool that don't spark joy. 
-performace well and easy to use
-so will focus to talk about SparkSQL, RDDs 
-
 ![picture alt](https://pbs.twimg.com/media/DYaocvHU8AAIYYW.jpg)  
 "Spark with Zeppelin are great combination" 
 
@@ -17,9 +13,14 @@ so will focus to talk about SparkSQL, RDDs
 	<li>MySQL (of course feel free to use PostgreSQL, we know we love it!) :smiley:</li>
 	<Li>PySpark</li>
 	<Li><a href= 'https://zeppelin.apache.org/docs/0.6.0/install/install.html'>Zeppelin</a></li>
-	<li><a href='https://pypi.org/project/Keras/'>Keras</a>  </li>
-	
-</ul>
+	<li><a href='https://pypi.org/project/Keras/'>Keras</a></li> 
+	<li>Hadoop 2.9.2</li> 
+	<li>Maven</li>  
+	<li>libprotoc 2.5.0</li>
+	<li>openssl/1.0.2o_2/</li> 
+	<li>aws-java-sdk-1.7.4</li>
+	<li>hadoop-aws-2.7.1<li> 
+</ul> 
 
 <h6>Setup </h6>
 To start this workshop, install it locally using npm and pip: (before plan to use docker but my mac low storage will strike in high frequency)</br> 
@@ -33,10 +34,59 @@ $ install Anaconda (https://repo.continuum.io/archive)
 $ install Apache Spark 
 $ install Java 
 $ pip install Keras  
+#install hadoop 2.9.2  
+$ brew install hadoop (Hadoop was installed under /usr/local/Cellar/hadoop) 
+or $ wget http://www.eu.apache.org/dist/hadoop/common/hadoop-2.9.2/hadoop-2.9.2-src.tar.gz (I recommend this one, otherwise there are so much bugs after when we build the env with Hadoop) 
 
+#config the hadoop 
+$ cd /usr/local/opt/hadoop
+$ hadoop-env.sh 
+export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true" 
+
+export HADOOP_OPTS="$HADOOP_OPTS -Djava.net.preferIPv4Stack=true -Djava.security.krb5.realm= -Djava.security.krb5.kdc="
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/<ADD_JDK_VERSION_HERE>/Contents/Home" 
+
+$ core-site.xml 
+# later when we connect with AWS S3 bucket, we need add IAM info on the property 
+<configuration>
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/usr/local/Cellar/hadoop/hdfs/tmp</value>
+    <description>A base for other temporary directories</description>             
+  </property>
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://localhost:8020</value>
+  </property>
+</configuration>
+	
+# mapred-site.xml 
+<configuration>
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>localhost:8021</value>
+  </property>
+</configuration>
+
+# hdfs-site.xml 
+<configuration>
+  <property>
+    <name>dfs.replication</name>
+    <value>1</value>
+  </property>
+</configuration>
+
+$ hdfs namenode -format 
+$ /usr/local/opt/hadoop/sbin (HDFS service) 
+$ ./start-dfs.sh 
+	
+#install Maven 
+# build the Hadoop env 
+$ mvn package -Pdist,native -DskipTests -Dtar 
+	
 ``` 
 <h6>Install Spark on Mac</h6>
-<ul>
+<ul> 
 	<li>First download <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html'>Java</a> </li>
 	note: please don't install Java version more than 8, which will created much bugs later such as java.lang.IllegalArgumentException, Unsupported class file major version 55, so better install from <a href= 'https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html'>Java SE Development Kit 8 </a>site and choose your os system and config.  
 	<li>Go to the <a href= 'http://spark.apache.org/downloads.html'>Apache Spark </a> website  </li>
@@ -63,6 +113,12 @@ export PYSPARK_DRIVER_PYTHON="jupyter"
 export PYSPARK_DRIVER_PYTHON_OPTS="notebook" 
 #For python 3, have to add the line below or will get an error export PYSPARK_PYTHON=python3 
 alias jupyter_notebook='$SPARK_PATH/bin/pyspark --master local[2]'
+export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native:$JAVA_LIBRARY_PATH
+
+export HADOOP_HOME=/usr/local/Cellar/hadoop/3.1.2/libexec
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib" 
 
 $ source .bash_profile 
 </code> 
