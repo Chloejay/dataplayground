@@ -16,7 +16,7 @@
     "cors": "^2.8.5",
     "db-migrate": "^0.11.5",
     "helmet": "^3.15.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "loopback": "^3.24.2",
     "loopback-boot": "^2.27.1",
     "loopback-component-auto-migrate": "^0.4.0",
