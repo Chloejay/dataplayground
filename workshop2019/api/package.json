@@ -29,7 +29,7 @@
     "serve-favicon": "^2.5.0",
     "strong-error-handler": "^3.2.0",
     "strong-remoting": "^3.13.2",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "useragent": "^2.3.0",
     "util": "^0.11.1",
     "yarn": "^1.13.0"
